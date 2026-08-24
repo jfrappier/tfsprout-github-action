@@ -1,0 +1,17 @@
+name: 'tfsprout'
+description: 'Run tfsprout (a maintained fork of tfproviderlint) against your Terraform provider code'
+branding:
+  icon: 'code'
+  color: 'purple'
+inputs:
+  args:
+    description: 'Arguments/package paths passed to tfsprout (e.g. ./... or -json ./...)'
+    required: false
+    default: './...'
+  version:
+    description: 'tfsprout version to install, as a go install version query (e.g. v0.2.0, latest). Defaults to latest release.'
+    required: false
+    default: 'latest'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

@@ -1,6 +1,6 @@
-# tfproviderlint-github-action
+# tfsprout-github-action
 
-For [Terraform Provider](https://www.terraform.io/docs/providers/index.html) developers, add Terraform Provider code linting to your GitHub repository easily with this [GitHub Action](https://github.com/features/actions). Uses [tfproviderlint](https://github.com/bflad/tfproviderlint).
+For [Terraform Provider](https://www.terraform.io/docs/providers/index.html) developers, add Terraform Provider code linting to your GitHub repository easily with this [GitHub Action](https://github.com/features/actions). Uses [tfsprout](https://github.com/jfrappier/tfsprout), a maintained fork of tfproviderlint.
 
 ## Usage
 
@@ -11,10 +11,11 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.0.0
-    - uses: bflad/tfproviderlint-github-action@master
+    - uses: actions/checkout@v4
+    - uses: jfrappier/tfsprout-github-action@main
       with:
         args: ./...
+        # version: v0.2.0   # optional: pin/override instead of the default `latest` release
 ```
 
 ## Development and Testing
@@ -22,5 +23,5 @@ jobs:
 To locally test the Docker build:
 
 ```console
-$ docker build -t tfproviderlint-github-action:latest .
+$ docker build -t tfsprout-github-action:latest .
 ```
